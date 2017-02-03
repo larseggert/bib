@@ -1,0 +1,107 @@
+% The rules below clean up and shorten bibliography entries according to my
+% personal perferences.
+
+% 1. don't show various fields such as ISBNs, etc.
+%
+\AtEveryBibitem{\clearfield{isbn}}
+\AtEveryBibitem{\clearfield{issn}}
+\AtEveryBibitem{\clearlist{institution}}
+\AtEveryBibitem{\clearfield{doi}}
+% \AtEveryBibitem{\clearfield{url}}
+\AtEveryBibitem{\clearlist{publisher}}
+% \AtEveryBibitem{\clearlist{location}}
+\AtEveryBibitem{\clearfield{series}}
+\AtEveryBibitem{\clearfield{note}}
+% \AtEveryBibitem{\clearfield{pages}}
+\AtEveryBibitem{\clearfield{pagetotal}}
+\AtEveryBibitem{\clearfield{volume}}
+% \AtEveryBibitem{\clearfield{month}}
+\AtEveryBibitem{
+	\ifboolexpr{test {\ifentrytype{article}}}{\clearfield{number}}{}
+        \ifboolexpr{not test {\ifentrytype{misc}}}{\clearfield{url}}{}
+}
+
+
+% 2. shorten various conference and journal titles to some sane length
+%
+\DeclareSourcemap{
+        \maps[datatype=bibtex]{
+                \map{
+                        % shorten conferences
+                        \step[fieldsource=booktitle,
+                                match={.*Internet Measurement Conference.*},
+                                replace={ACM IMC}]
+                        \step[fieldsource=booktitle,
+                                match={.*Networked Systems Design and Implementation.*},
+                                replace={USENIX NSDI}]
+                        \step[fieldsource=booktitle,
+                                match={.*Hot Topics in Networks.*},
+                                replace={ACM HotNets}]
+                        \step[fieldsource=booktitle,
+                                match={.*Ope..ting Systems Design .* Implementation.*},
+                                replace={USENIX OSDI}]
+                        \step[fieldsource=booktitle,
+                                match={.*USENIX.*Annual Technical Conference.*},
+                                replace={USENIX ATC}]
+                        \step[fieldsource=booktitle,
+                                match={.*USENIX Conference on File and Storage Technologies.*},
+                                replace={USENIX FAST}]
+                        \step[fieldsource=booktitle,
+                                match={.*European Conference on Computer Systems.*},
+                                replace={ACM EuroSys}]
+                        \step[fieldsource=booktitle,
+                                match={.*Symposium on Operating Systems Principles.*},
+                                replace={ACM SOSP}]
+                        \step[fieldsource=booktitle,
+                                match={.*(USENIX Security Symposium|USENIX Conference on Security).*},
+                                replace={USENIX Security}]
+                        \step[fieldsource=booktitle,
+                                match={.*USENIX Symposium on Internet Technologies and Systems.*},
+                                replace={USENIX USITS}]
+                        \step[fieldsource=booktitle,
+                                match={.*Emerging Networking E.periments and Technologies.*},
+                                replace={ACM CoNEXT}]
+                        \step[fieldsource=booktitle,
+                                match={.*INFOCOM.*},
+                                replace={IEEE Infocom}]
+                        \step[fieldsource=journal,
+                                match={.*Trans. Netw..*},
+                                replace={IEEE/ACM ToN}]
+                        \step[fieldsource=booktitle,
+                                match={.*Mobile Computing and Networking.*},
+                                replace={ACM MobiCom}]
+                        \step[fieldsource=booktitle,
+                                match={.*Roedunet.*},
+                                replace={IEEE RoEduNet}]
+                        \step[fieldsource=booktitle,
+                                match={.*Symposium on Software Defined Networking Research.*},
+                                replace={ACM SOSR}]
+                        \step[fieldsource=booktitle,
+                                match={.*Architectures? for Networking and Communications Systems.*},
+                                replace={ACM ANCS}]
+                        % keep this last
+                        \step[fieldsource=booktitle,
+                                match={.*(SIGCOMM|Special Interest Group on Data Communication|Applications, Technologies, Architectures, and Protocols|Communications Architectures and Protocols).*},
+                                replace={ACM SIGCOMM}]
+                        % shorten journals
+                        \step[fieldsource=journal,
+                                match={.*IEEE Journal on Selected Areas in Communication.*},
+                                replace={IEEE JSAC}]
+                        \step[fieldsource=journal,
+                                match={.*Comput. Commun. Rev..*},
+                                replace={ACM SIGCOMM CCR}]
+                }
+        }
+}
+
+
+% 3. Use "Proc." for @inproceedings (not "In:") and abbreviate months consistently
+%
+\DefineBibliographyStrings{english}{
+        in               = {Proc.},
+        page             = {p\adddot},
+        pages            = {pp\adddot},
+        june             = {Jun\adddot},
+        july             = {Jul\adddot},
+        september        = {Sep\adddot},
+}
