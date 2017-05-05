@@ -67,6 +67,9 @@
                         \step[fieldsource=journal,
                                 match={.*Trans. Netw..*},
                                 replace={IEEE/ACM ToN}]
+                        \step[fieldsource=journal,
+                                match={.*Transactions on Network and Service Management*},
+                                replace={IEEE ToNSM}]
                         \step[fieldsource=booktitle,
                                 match={.*Mobile Computing and Networking.*},
                                 replace={ACM MobiCom}]
@@ -94,9 +97,18 @@
                         \step[fieldsource=booktitle,
                                 match={.*E2EMON.*},
                                 replace={IEEE/IFIP E2EMON}]
+                        \step[fieldsource=booktitle,
+                                match={.*International Conference on Autonomic Computing.*},
+                                replace={IEEE ICAC}]
+                        \step[fieldsource=booktitle,
+                                match={.*Hot Topics in Middleboxes.*},
+                                replace={ACM SIGCOMM HotMiddlebox}]
+                        \step[fieldsource=booktitle,
+                                match={.*Hot Topics in Management of Internet, Cloud, and Enterprise Networks.*},
+                                replace={USENIX Hot-ICE}]
                         % keep this last
                         \step[fieldsource=booktitle,
-                                match={.*(SIGCOMM|Special Interest Group on Data Communication|Applications, Technologies, Architectures, and Protocols|Communications Architectures and Protocols).*},
+                                match={.*(Conference on SIGCOMM|Special Interest Group on Data Communication|Applications, Technologies, Architectures, and Protocols|Communications Architectures and Protocols).*},
                                 replace={ACM SIGCOMM}]
                         % shorten journals
                         \step[fieldsource=journal,
