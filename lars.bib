@@ -1,17 +1,18 @@
 
 
 @inproceedings{Dragga:2015,
+	Address = {Santa Clara, CA, USA},
 	Author = {Dragga, Chris and Santry, Douglas J.},
 	Booktitle = {2015 31st Symposium on Mass Storage Systems and Technologies (MSST)},
 	Date-Added = {2017-08-16 11:48:40 +0000},
-	Date-Modified = {2017-08-16 11:50:23 +0000},
+	Date-Modified = {2017-08-16 13:34:55 +0000},
 	Doi = {10.1109/MSST.2015.7208282},
 	Issn = {2160-195X},
 	Keywords = {storage management;GCTrees method;block lineage concept;database workload;enterprise data center;enterprise storage management;file-system snapshots;garbage collecting snapshots;gcext4 file system;hierarchical reference counting;small-file workload;virtual machine;Indexes;Linux;Radiation detectors;Storms;Vegetation},
 	Month = {5},
 	Pages = {1-12},
 	Series = {MSST'15},
-	Title = {{GCTrees}: Garbage collecting snapshots},
+	Title = {{GCTrees}: Garbage Collecting Snapshots},
 	Year = {2015},
 	Abstract = {File-system snapshots have been a key component of enterprise storage management since their inception. Creating and managing them efficiently, while maintaining flexibility and low overhead, has been a constant struggle. Although the current state-of-the-art mechanism, hierarchical reference counting, performs reasonably well for traditional small-file workloads, these workloads are increasingly vanishing from the enterprise data center, replaced instead with virtual machine and database workloads. These workloads center around a few very large files, violating the assumptions that allow hierarchical reference counting to operate efficiently. To better cope with these workloads, we introduce GCTrees, a novel method of space management that uses concepts of block lineage across snapshots, rather than explicit reference counting. As a proof of concept, we create a prototype file system, gcext4, a modified version of ext4 that uses GCTrees as a basis for snapshots and copy-on-write. In evaluating this prototype analytically, we find that, though they have a somewhat higher overhead for traditional workloads, GCTrees have dramatically lower overhead than hierarchical reference counting for large-file workloads, improving by a factor of 34 or more in some cases. Furthermore, gcext4 performs comparably to ext4 across all workloads, showing that GCTrees impose minor cost for their benefits.},
 	Bdsk-Url-1 = {http://dx.doi.org/10.1109/MSST.2015.7208282}}
