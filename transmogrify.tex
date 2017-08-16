@@ -3,23 +3,27 @@
 
 % 1. don't show various fields such as ISBNs, etc.
 %
+\AtEveryBibitem{\clearfield{doi}}
 \AtEveryBibitem{\clearfield{isbn}}
 \AtEveryBibitem{\clearfield{issn}}
-\AtEveryBibitem{\clearlist{institution}}
-\AtEveryBibitem{\clearfield{doi}}
-% \AtEveryBibitem{\clearfield{url}}
-\AtEveryBibitem{\clearlist{publisher}}
-% \AtEveryBibitem{\clearlist{location}}
+\AtEveryBibitem{\clearfield{pagetotal}}
 \AtEveryBibitem{\clearfield{series}}
+\AtEveryBibitem{\clearlist{institution}}
+\AtEveryBibitem{\clearlist{publisher}}
+
+% \AtEveryBibitem{\clearfield{month}}
 % \AtEveryBibitem{\clearfield{note}}
 % \AtEveryBibitem{\clearfield{pages}}
-\AtEveryBibitem{\clearfield{pagetotal}}
-\AtEveryBibitem{\clearfield{volume}}
-% \AtEveryBibitem{\clearfield{month}}
-\AtEveryBibitem{
-	\ifboolexpr{test {\ifentrytype{article}}}{\clearfield{number}}{}
-        \ifboolexpr{not test {\ifentrytype{misc}}}{\clearfield{url}}{}
+% \AtEveryBibitem{\clearfield{url}}
+% \AtEveryBibitem{\clearfield{volume}}
+% \AtEveryBibitem{\clearlist{location}}
+
+\AtEveryBibitem{%
+	\ifboolexpr{test {\ifentrytype{article}}}{\clearfield{number}}{}%
+        \ifboolexpr{not test {\ifentrytype{misc}}}{\clearfield{url}}{}%
 }
+
+\AtEveryCitekey{\UseBibitemHook}
 
 
 % 2. shorten various conference and journal titles to some sane length
@@ -109,6 +113,9 @@
                         \step[fieldsource=booktitle,
                                 match={.*International Conference on Supercomputing.*},
                                 replace={ACM ICS}]
+                        \step[fieldsource=booktitle,
+                                match={.*Symposium on Mass Storage Systems and Technologies.*},
+                                replace={MSST}]
                         % keep this last
                         \step[fieldsource=booktitle,
                                 match={.*(Conference on SIGCOMM|Special Interest Group on Data Communication|Applications, Technologies, Architectures, and Protocols|Communications Architectures and Protocols).*},
