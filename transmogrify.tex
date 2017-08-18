@@ -6,16 +6,17 @@
 \AtEveryBibitem{\clearfield{doi}}
 \AtEveryBibitem{\clearfield{isbn}}
 \AtEveryBibitem{\clearfield{issn}}
-\AtEveryBibitem{\clearfield{pagetotal}}
 \AtEveryBibitem{\clearfield{series}}
-\AtEveryBibitem{\clearlist{institution}}
+\AtEveryBibitem{\clearfield{eprint}}
 \AtEveryBibitem{\clearlist{publisher}}
 
 % \AtEveryBibitem{\clearfield{month}}
 % \AtEveryBibitem{\clearfield{note}}
 % \AtEveryBibitem{\clearfield{pages}}
+% \AtEveryBibitem{\clearfield{pagetotal}}
 % \AtEveryBibitem{\clearfield{url}}
 % \AtEveryBibitem{\clearfield{volume}}
+% \AtEveryBibitem{\clearlist{institution}}
 % \AtEveryBibitem{\clearlist{location}}
 
 \AtEveryBibitem{%
@@ -116,6 +117,12 @@
                         \step[fieldsource=booktitle,
                                 match={.*Symposium on Mass Storage Systems and Technologies.*},
                                 replace={MSST}]
+                        \step[fieldsource=booktitle,
+                                match={.*International Symposium on Microarchitecture.*},
+                                replace={IEEE/ACM MICRO}]
+                        \step[fieldsource=booktitle,
+                                match={.*Languages and Compilers for Parallel Computing.*},
+                                replace={LCPC}]
                         % keep this last
                         \step[fieldsource=booktitle,
                                 match={.*(Conference on SIGCOMM|Special Interest Group on Data Communication|Applications, Technologies, Architectures, and Protocols|Communications Architectures and Protocols).*},
