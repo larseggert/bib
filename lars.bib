@@ -1,5 +1,59 @@
 
 
+@inproceedings{Dun:2016,
+	Address = {Frankfurt, Germany},
+	Author = {Dun, Nan and Pleiter, Dirk and Fang, Aiman and Vandenbergen, Nicolas and Chien, Andrew A.},
+	Booktitle = {ISC High Performance 2016},
+	Date-Added = {2017-09-06 15:16:25 +0000},
+	Date-Modified = {2017-09-06 15:17:53 +0000},
+	Doi = {10.1007/978-3-319-41321-1_25},
+	Isbn = {978-3-319-41321-1},
+	Month = {6},
+	Pages = {486--504},
+	Series = {ISC'16},
+	Title = {Multi-versioning Performance Opportunities in {BGAS} System for Resilience},
+	Url = {https://doi.org/10.1007/978-3-319-41321-1_25},
+	Year = {2016},
+	Abstract = {Resilience has become a major concern in high-performance computing (HPC) systems. Addressing the increasing risk of latent errors (or silent data corruption) is one of the biggest challenges. Multi-version checkpointing system, which keeps multi-version of the application states, has been proposed as a solution and has been implemented in Global View Resilience (GVR). The resulting more sophisticated management of data introduces overheads and the resulting impact on performance need to be investigated. In this paper we explore the performance of GVR for an HPC system with integrated non-volatile memories, namely Blue Gene Active Storage (BGAS). Our empirical study shows that the BGAS system provides a significantly more efficient basis for flexible error recovery by using GVR multi-versioning features compared to using a standard external storage system attached to the same Blue Gene/Q installation. Using BGAS especially achieves at least                                                                                   {\$}{\$}10{\backslash}times {\$}{\$}                   performance boost for random traversal across multiple versions due to significantly better performance for small random I/O operations.},
+	Bdsk-Url-1 = {https://doi.org/10.1007/978-3-319-41321-1_25},
+	Bdsk-Url-2 = {http://dx.doi.org/10.1007/978-3-319-41321-1_25}}
+
+@inproceedings{Baumeister:2015,
+	Address = {Frankfurt, Germany},
+	Author = {Baumeister, Paul F. and Boettiger, Hans and Brunheroto, Jos{\'e} R. and Hater, Thorsten and Maurer, Thilo and Nobile, Andrea and Pleiter, Dirk},
+	Booktitle = {ISC High Performance},
+	Date-Added = {2017-09-06 15:13:02 +0000},
+	Date-Modified = {2017-09-06 15:15:35 +0000},
+	Doi = {10.1007/978-3-319-20119-1_8},
+	Isbn = {978-3-319-20119-1},
+	Month = {7},
+	Pages = {96--112},
+	Series = {ISC'15},
+	Title = {Accelerating {LBM} and {LQCD} Application Kernels by In-Memory Processing},
+	Url = {https://doi.org/10.1007/978-3-319-20119-1_8},
+	Year = {2015},
+	Abstract = {Processing-in-memory architectures promise increased computing performance at decreased costs in energy, as the physical proximity of the compute pipelines to the data store eliminates overheads for data transport. We assess the overall performance impact using a recently introduced architecture of that type, called the Active Memory Cube, for two representative scientific applications. Precise performance results for performance critical kernels are obtained using cycle-accurate simulations. We provide an overall performance estimate using performance models.},
+	Bdsk-Url-1 = {https://doi.org/10.1007/978-3-319-20119-1_8},
+	Bdsk-Url-2 = {http://dx.doi.org/10.1007/978-3-319-20119-1_8}}
+
+@inproceedings{Caulfield:2016,
+	Address = {Taipei, Taiwan},
+	Author = {Caulfield, Adrian and Chung, Eric and Putnam, Andrew and Angepat, Hari and Fowers, Jeremy and Haselman, Michael and Heil, Stephen and Humphrey, Matt and Kaur, Puneet and Kim, Joo-Young and Lo, Daniel and Massengill, Todd and Ovtcharov, Kalin and Papamichael, Michael and Woods, Lisa and Lanka, Sitaram and Chiou, Derek and Burger, Doug},
+	Booktitle = {Proceedings of the 49th Annual IEEE/ACM International Symposium on Microarchitecture},
+	Date-Added = {2017-09-06 15:08:57 +0000},
+	Date-Modified = {2017-09-06 15:10:21 +0000},
+	Month = {10},
+	Pagetotal = {13},
+	Publisher = {IEEE Computer Society},
+	Series = {MICRO'16},
+	Title = {A Cloud-Scale Acceleration Architecture},
+	Url = {https://www.microsoft.com/en-us/research/publication/configurable-cloud-acceleration/},
+	Year = {2016},
+	Abstract = {Hyperscale datacenter providers have struggled to balance the growing need for specialized hardware (efficiency) with the economic benefits of homogeneity (manageability).  In this paper we propose a new cloud architecture that uses reconfigurable logic to accelerate both network plane functions and applications.  This Configurable Cloud architecture places a layer of reconfigurable logic (FPGAs) between the network switches and the servers, enabling network flows to be programmably transformed at line rate, enabling acceleration of local applications running on the server, and enabling the FPGAs to communicate directly, at datacenter scale, to harvest remote FPGAs unused by their local servers.
+
+We deployed this design over a production server bed, and show how it can be used for both service acceleration (Web search ranking) and network acceleration (encryption of data in transit at high-speeds).  This architecture is much more scalable than prior work which used secondary rack-scale networks for inter-FPGA communication.  By coupling to the network plane, direct FPGA-to-FPGA messages can be achieved at comparable latency to previous work, without the secondary network.  Additionally, the scale of direct inter-FPGA messaging is much larger.  The average round-trip latencies observed in our measurements among 24, 1000, and 250,000 machines are under 3, 9, and 20 microseconds, respectively.   The Configurable Cloud architecture has been deployed at hyperscale in Microsoft's production datacenters worldwide.},
+	Bdsk-Url-1 = {https://www.microsoft.com/en-us/research/publication/configurable-cloud-acceleration/}}
+
 @inproceedings{Chandrasekar:2017,
 	Address = {Redmond, WA, USA},
 	Author = {Chandrasekar, Raghunath Raja and Evans, Lance and Wespetal, Robert},
@@ -9,7 +63,7 @@
 	Month = {5},
 	Pagetotal = {13},
 	Series = {CUG'17},
-	Title = {An Exploration into Object Storage for Exascale Supercomputers },
+	Title = {An Exploration into Object Storage for Exascale Supercomputers},
 	Year = {2017}}
 
 @inproceedings{Ammendolak:2017,
