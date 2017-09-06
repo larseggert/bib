@@ -112,7 +112,7 @@
                                 match={.*Hot Topics in Management of Internet, Cloud, and Enterprise Networks.*},
                                 replace={USENIX Hot-ICE}]
                         \step[fieldsource=booktitle,
-                                match={.*International Conference on Supercomputing.*},
+                                match={.*International (ACM )?Conference on Supercomputing.*},
                                 replace={ACM ICS}]
                         \step[fieldsource=booktitle,
                                 match={.*Symposium on Mass Storage Systems and Technologies.*},
@@ -126,6 +126,12 @@
                         \step[fieldsource=booktitle,
                                 match={.*Conference for High Performance Computing, Networking, Storage and Analysis.*},
                                 replace={ACM/IEEE SC}]
+                        \step[fieldsource=booktitle,
+                                match={.*International Symposium on Computing and Networking.*},
+                                replace={CANDAR}]
+                        \step[fieldsource=booktitle,
+                                match={.*Euro-Par.*},
+                                replace={Euro-Par}]
                         % keep this last
                         \step[fieldsource=booktitle,
                                 match={.*(Conference on SIGCOMM|Special Interest Group on Data Communication|Applications, Technologies, Architectures, and Protocols|Communications Architectures and Protocols).*},
