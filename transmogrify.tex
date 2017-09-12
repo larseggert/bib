@@ -69,12 +69,6 @@
                         \step[fieldsource=booktitle,
                                 match={.*INFOCOM.*},
                                 replace={IEEE Infocom}]
-                        \step[fieldsource=journal,
-                                match={.*Trans. Netw..*},
-                                replace={IEEE/ACM ToN}]
-                        \step[fieldsource=journal,
-                                match={.*Transactions on Network and Service Management*},
-                                replace={IEEE ToNSM}]
                         \step[fieldsource=booktitle,
                                 match={.*Mobile Computing and Networking.*},
                                 replace={ACM MobiCom}]
@@ -150,6 +144,9 @@
                         \step[fieldsource=booktitle,
                                 match={.*Euromicro Conference on Digital System Design.*},
                                 replace={Euromicro DSD}]
+                        \step[fieldsource=booktitle,
+                                match={.*USENIX Winter Conference.*},
+                                replace={USENIX Winter}]
                         % keep this last
                         \step[fieldsource=booktitle,
                                 match={.*(Conference on SIGCOMM|Special Interest Group on Data Communication|Applications, Technologies, Architectures, and Protocols|Communications Architectures and Protocols).*},
@@ -158,6 +155,12 @@
                         \step[fieldsource=journal,
                                 match={.*IEEE Journal on Selected Areas in Communication.*},
                                 replace={IEEE JSAC}]
+                        \step[fieldsource=journal,
+                                match={.*Trans. Netw..*},
+                                replace={IEEE/ACM ToN}]
+                        \step[fieldsource=journal,
+                                match={.*Transactions on Network and Service Management*},
+                                replace={IEEE ToNSM}]
                         \step[fieldsource=journal,
                                 match={.*Comput. Commun. Rev..*},
                                 replace={ACM SIGCOMM CCR}]
@@ -168,6 +171,6 @@
 
 % 3. Use "Proc." for @inproceedings (not "In:") and abbreviate months consistently
 %
-\DeclareLanguageMapping{american}{lars-american}
-\DeclareLanguageMapping{british}{lars-british}
+\DeclareLanguageMapping{american}{bib/lars-american}
+\DeclareLanguageMapping{british}{bib/lars-british}
 
