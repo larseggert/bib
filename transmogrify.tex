@@ -90,6 +90,9 @@
                         \step[fieldsource=booktitle,
                                 match={.*QoS.*Mini.*Conf.*ICC.*},
                                 replace={IEEE ICC QoS Mini-Conference}]
+                        \step[fieldsource=institution,
+                                match={.*Barcelona Supercomputing Center.*},
+                                replace={Barcelona Supercomputing Center (BSC)}]
                         \step[fieldsource=booktitle,
                                 match={.*System Administration and Network Engineering Conference.*},
                                 replace={SANE}]
@@ -141,6 +144,12 @@
                         \step[fieldsource=booktitle,
                                 match={.*International Conference on Big Data.*},
                                 replace={IEEE Big Data}]
+                        \step[fieldsource=booktitle,
+                                match={.*Symposium on Modeling, Analysis, and Simulation.*},
+                                replace={IEEE MASCOTS}]
+                        \step[fieldsource=booktitle,
+                                match={.*Euromicro Conference on Digital System Design.*},
+                                replace={Euromicro DSD}]
                         % keep this last
                         \step[fieldsource=booktitle,
                                 match={.*(Conference on SIGCOMM|Special Interest Group on Data Communication|Applications, Technologies, Architectures, and Protocols|Communications Architectures and Protocols).*},
@@ -159,11 +168,6 @@
 
 % 3. Use "Proc." for @inproceedings (not "In:") and abbreviate months consistently
 %
-\DefineBibliographyStrings{english}{
-        in               = {Proc.},
-        page             = {p\adddot},
-        pages            = {pp\adddot},
-        june             = {Jun\adddot},
-        july             = {Jul\adddot},
-        september        = {Sep\adddot},
-}
+\DeclareLanguageMapping{american}{lars-american}
+\DeclareLanguageMapping{british}{lars-british}
+
