@@ -8,14 +8,16 @@
 \AtEveryBibitem{\clearfield{issn}}
 \AtEveryBibitem{\clearfield{series}}
 \AtEveryBibitem{\clearfield{eprint}}
+\AtEveryBibitem{\clearname{editor}}
+\AtEveryBibitem{\clearlist{language}}
 \AtEveryBibitem{\clearlist{publisher}}
 
 % \AtEveryBibitem{\clearfield{month}}
 % \AtEveryBibitem{\clearfield{note}}
 % \AtEveryBibitem{\clearfield{pages}}
-% \AtEveryBibitem{\clearfield{pagetotal}}
+\AtEveryBibitem{\clearfield{pagetotal}}
 % \AtEveryBibitem{\clearfield{url}}
-% \AtEveryBibitem{\clearfield{volume}}
+\AtEveryBibitem{\ifentrytype{inproceedings}{\clearfield{volume}}{}}
 % \AtEveryBibitem{\clearlist{institution}}
 % \AtEveryBibitem{\clearlist{location}}
 
@@ -186,6 +188,12 @@
                         \step[fieldsource=booktitle,
                                 match={.*International Conference on World Wide Web.*},
                                 replace={WWW}]
+                        \step[fieldsource=booktitle,
+                                match={.*Security Standardisation Research.*},
+                                replace={SSR}]
+                        \step[fieldsource=booktitle,
+                                match={.*Symposium on Security and Privacy.*},
+                                replace={IEEE SSP}]
                         % keep this last
                         \step[fieldsource=booktitle,
                                 match={.*(Conference on SIGCOMM|Special Interest Group on Data Communication|Applications, Technologies, Architectures, and Protocols|Communications Architectures and Protocols).*},
