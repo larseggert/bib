@@ -4,27 +4,31 @@
 % 1. don't show various fields such as ISBNs, etc.
 %
 \AtEveryBibitem{\clearfield{doi}}
+\AtEveryBibitem{\clearfield{eprint}}
 \AtEveryBibitem{\clearfield{isbn}}
 \AtEveryBibitem{\clearfield{issn}}
+\AtEveryBibitem{\clearfield{pagetotal}}
 \AtEveryBibitem{\clearfield{series}}
-\AtEveryBibitem{\clearfield{eprint}}
-\AtEveryBibitem{\clearname{editor}}
+\AtEveryBibitem{\ifboolexpr{test {\ifentrytype{url}} or
+                            test {\ifentrytype{misc}}}{}{\clearfield{url}}}
 \AtEveryBibitem{\clearlist{language}}
 \AtEveryBibitem{\clearlist{publisher}}
+\AtEveryBibitem{\clearname{editor}}
+\AtEveryBibitem{\ifentrytype{article}{\clearfield{number}}{}}
+\AtEveryBibitem{\ifentrytype{inproceedings}{\clearfield{volume}}{}}
+
+\DeclareFieldFormat{url}{\url{#1}}
 
 % \AtEveryBibitem{\clearfield{month}}
 % \AtEveryBibitem{\clearfield{note}}
 % \AtEveryBibitem{\clearfield{pages}}
-\AtEveryBibitem{\clearfield{pagetotal}}
-% \AtEveryBibitem{\clearfield{url}}
-\AtEveryBibitem{\ifentrytype{inproceedings}{\clearfield{volume}}{}}
 % \AtEveryBibitem{\clearlist{institution}}
 % \AtEveryBibitem{\clearlist{location}}
 
-\AtEveryBibitem{%
-	\ifboolexpr{test {\ifentrytype{article}}}{\clearfield{number}}{}%
-        \ifboolexpr{not test {\ifentrytype{misc}}}{\clearfield{url}}{}%
-}
+% \AtEveryBibitem{%
+% 	\ifboolexpr{test {\ifentrytype{article}}}{\clearfield{number}}{}%
+%         \ifboolexpr{not test {\ifentrytype{misc}}}{\clearfield{url}}{}%
+% }
 
 \AtEveryCitekey{\UseBibitemHook}
 
@@ -220,5 +224,5 @@
 %
 \DeclareLanguageMapping{american}{bib/lars-american}
 \DeclareLanguageMapping{british}{bib/lars-british}
-\DeclareLanguageMapping{english}{bib/lars-british}
+\DeclareLanguageMapping{english}{bib/lars-english}
 
