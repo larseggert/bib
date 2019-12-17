@@ -9,7 +9,8 @@
 \AtEveryBibitem{\clearfield{issn}}
 \AtEveryBibitem{\clearfield{pagetotal}}
 \AtEveryBibitem{\clearfield{series}}
-\AtEveryBibitem{\ifboolexpr{test {\ifentrytype{url}} or
+\AtEveryBibitem{\ifboolexpr{test {\ifentrytype{electronic}} or
+                            test {\ifentrytype{online}} or
                             test {\ifentrytype{misc}}}{}{\clearfield{url}}}
 \AtEveryBibitem{\clearlist{language}}
 \AtEveryBibitem{\clearlist{publisher}}
@@ -19,16 +20,21 @@
 
 \DeclareFieldFormat{url}{\url{#1}}
 
+\usepackage{xpatch}
+
+\xpatchbibdriver{online}
+  {\printtext[parens]{\usebibmacro{date}}}
+  {\iffieldundef{year}
+    {}
+    {\printtext[parens]{\usebibmacro{date}}}}
+  {}
+  {\typeout{There was an error patching biblatex-ieee (specifically, ieee.bbx's @online driver)}}
+
 % \AtEveryBibitem{\clearfield{month}}
 % \AtEveryBibitem{\clearfield{note}}
 % \AtEveryBibitem{\clearfield{pages}}
 % \AtEveryBibitem{\clearlist{institution}}
 % \AtEveryBibitem{\clearlist{location}}
-
-% \AtEveryBibitem{%
-% 	\ifboolexpr{test {\ifentrytype{article}}}{\clearfield{number}}{}%
-%         \ifboolexpr{not test {\ifentrytype{misc}}}{\clearfield{url}}{}%
-% }
 
 \AtEveryCitekey{\UseBibitemHook}
 
@@ -70,7 +76,7 @@
                                 match={.*USENIX Symposium on Internet Technologies and Systems.*},
                                 replace={USENIX USITS}]
                         \step[fieldsource=booktitle,
-                                match={.*Emerging Networking E.periments and Technologies.*},
+                                match={.*Emerging Networking E.periments .nd Technologies.*},
                                 replace={ACM CoNEXT}]
                         \step[fieldsource=booktitle,
                                 match={.*INFOCOM.*},
@@ -198,6 +204,9 @@
                         \step[fieldsource=booktitle,
                                 match={.*Symposium on Security and Privacy.*},
                                 replace={IEEE SSP}]
+                        \step[fieldsource=booktitle,
+                                match={.*Network and Operating Systems Support for Digital Audio and Video.*},
+                                replace={ACM NOSSDAV}]
                         % keep this last
                         \step[fieldsource=booktitle,
                                 match={.*(Conference on SIGCOMM|Special Interest Group on Data Communication|Applications, Technologies, Architectures, and Protocols|Communications Architectures and Protocols).*},
